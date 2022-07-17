@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@formily/core": "^2.1.6",
+    "@formily/vue": "^2.1.6",
+    "ant-design-vue": "^3.2.9",
     "vue": "^3.2.25"
   },
   "devDependencies": {

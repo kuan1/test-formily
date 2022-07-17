@@ -1,21 +1,29 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <a-card v-for="item in components" :key="item.key" :title="item.key" class="card">
+    <component :is="item.is" />
+  </a-card>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<script setup lang="ts">
+import TestField from './components/TestField.vue';
+import TestArrayField from './components/TestArrayField.vue';
+import TestObjectField from './components/TestObjectField.vue';
+import VoidField from './components/VoidField.vue';
+import TestSchemaField from './components/TestSchemaField.vue';
+
+const components = [
+  { is: TestField, key: 'TestField' },
+  { is: TestArrayField, key: 'TestArrayField' },
+  { is: TestObjectField, key: 'TestObjectField' },
+  { is: VoidField, key: 'VoidField' },
+  { is: TestSchemaField, key: 'TestSchemaField' },
+]
+
+</script>
+
+<style scoped>
+.card {
+  margin: 1em;
 }
 </style>
