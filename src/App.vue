@@ -1,7 +1,7 @@
 
 <template>
-  <a-card v-for="item in components" :key="item.key" :title="item.key" class="card">
-    <component :is="item.is" />
+  <a-card v-for="(is, key) in components" :key="key" :title="key" class="card">
+    <component :is="is" />
   </a-card>
 </template>
 
@@ -11,14 +11,18 @@ import TestArrayField from './components/TestArrayField.vue';
 import TestObjectField from './components/TestObjectField.vue';
 import VoidField from './components/VoidField.vue';
 import TestSchemaField from './components/TestSchemaField.vue';
+import TestObserver from './components/TestObserver.vue';
+import TestMapProps from './components/TestMapProps.vue';
 
-const components = [
-  { is: TestField, key: 'TestField' },
-  { is: TestArrayField, key: 'TestArrayField' },
-  { is: TestObjectField, key: 'TestObjectField' },
-  { is: VoidField, key: 'VoidField' },
-  { is: TestSchemaField, key: 'TestSchemaField' },
-]
+const components = {
+  TestField,
+  TestArrayField,
+  TestObjectField,
+  VoidField,
+  TestSchemaField,
+  TestObserver,
+  TestMapProps
+}
 
 </script>
 
